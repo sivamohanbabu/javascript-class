@@ -6,13 +6,18 @@
     <title>Document</title>
 <script>
     const sub =(a,b)=>{
-    return document.write(`<br>The a and b substration is ${a-b}`)
+    return document.write(`<br><br>The a and b substration is ${a-b}`)
     }
     const  add=(a,b)=>{
     return document.write(`The a and b addition is ${a+b}`)
     }
-    add(2,3)
-    sub(3,4)
+     setInterval(()=> 
+     document.write(Date().trim)
+     ,3000) 
+     setTimeout(()=>
+     {add(2,3)}
+     ,4000)
+    
 
 </script>
 </head>
