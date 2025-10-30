@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-    const sub =(a,b)=>{
-    return document.write(`<br><br>The a and b substration is ${a-b}`)
-    }
-    const  add=(a,b)=>{
-    return document.write(`The a and b addition is ${a+b}`)
-    }
-     setInterval(()=> 
-     {add(2,3)}
-     ,3000) 
-     setTimeout(()=>
-     {add(2,3)}
-     ,4000)
-    
+  const count=()=>{
+    const add=()=>{
 
+a=0
+while(a<2000){
+    document.write(`<ul><li>${a}</li></ul>`)
+    a++;
+}}
+   
+  document.getElementById("counter").innerHTML = `${add()}`
+  }
 </script>
 </head>
 <body>
-
+    <button id="counter"></button>
+<button onclick="setInterval(() => {
+    count()
+}, 1000); ">count</button>
 </body>
 </html>
