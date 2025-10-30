@@ -3,25 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<script>
-  const count=()=>{
-    const add=()=>{
+    <title>Basic Form</title>
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
 
-a=0
-while(a<2000){
-    document.write(`<ul><li>${a}</li></ul>`)
-    a++;
-}}
-   
-  document.getElementById("counter").innerHTML = `${add()}`
-  }
-</script>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <button id="counter"></button>
-<button onclick="setInterval(() => {
-    count()
-}, 1000); ">count</button>
+    <div class="form-container">
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+            </div>
+            <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+            </div>
+            <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+            }
+        </script>
+    </div>
 </body>
 </html>
